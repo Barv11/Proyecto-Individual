@@ -35,5 +35,5 @@
 
 ## Conclusión
 
-> En este proyecto pongo en práctica todos los conocimientos aprendidos en el bootcamp de Henry hasta ahora.
+En este proyecto pongo en práctica todos los conocimientos aprendidos en el bootcamp de Henry hasta ahora.
 
