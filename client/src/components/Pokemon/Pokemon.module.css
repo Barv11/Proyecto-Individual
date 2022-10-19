@@ -1,0 +1,132 @@
+
+.card {
+    border-radius: 10% 23% 10% 23% / 10% 23% 10% 23%   ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 300px;
+    height: 360px; */
+    padding: 0 1em 1em 1em;
+    background: linear-gradient(-45deg, #3b98ea, #dde456 , #ec6464, #e6ee56);
+    background-size: 400% 400%;
+    background-position: 0% 10%;
+    /* border: 3px solid rgb(230, 87, 87); */
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 0 10px 1px #000;
+    user-select: none;
+    margin: 10px;
+}
+
+.card:hover {
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 10%;
+    }
+    50% {
+        background-position: 80% 50%;
+    }
+    100% {
+        background-position: 0% 10%;
+    }
+}
+
+.pokeimg {
+    width: 220px;
+    margin: 1em;
+    height: 210px;
+    filter: drop-shadow(0 0 1em rgb(255, 255, 255)) drop-shadow(0 0 1em rgb(255, 255, 255)) ;
+}
+
+.link {
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    /* margin-top: 4.5em; */
+    padding: .6em;
+    /* background-color: rgb(233, 129, 10); */
+    color: black;
+    transition: all .5s;
+}
+
+.link span {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.4rem;
+    cursor: pointer;
+    position: relative;
+    transition: all .5s;
+}
+
+.link span::after {
+    content: '>';
+    position: absolute;
+    opacity: 0;
+    top: .4px;
+    left: 0;
+    transition: all 0.5s;
+}
+
+.link span::before {
+    content: '<';
+    position: absolute;
+    opacity: 0;
+    top: .4px;
+    right: 0;
+    transition: all 0.5s;
+}
+
+.link:hover span {
+    padding: 0 1em;
+}
+
+.link:hover span:after {
+    opacity: 1;
+    left: 0;
+}
+
+.link:hover span::before {
+    opacity: 1;
+    right: 0;
+}
+
+.type {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    /* background-color: #fff; */
+}
+
+.unknown {
+    width: 3.6em !important;
+}
+
+.typechild {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: .3em;
+    padding: .2em;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.typechild:hover {
+    background-color: rgba(255, 255, 255, 0.836);
+    border-radius: 10px;
+    padding: .2em;
+}
+
+.typechild p {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.typechild img {
+    width: 1.8em;
+}

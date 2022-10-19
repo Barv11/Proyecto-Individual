@@ -1,0 +1,124 @@
+.container {   
+  height: calc(100vh - 150px);
+  width: 97%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2em; 
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.containerchild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgb(230, 230, 70);
+  box-shadow: 0 0 20px rgb(221, 255, 253);
+  border-radius: 50% 15% 15% 50% / 45% 45% 45% 45% ;
+}
+
+.img {
+  position: relative;
+  height: 500px;
+  width: 510px;
+}
+
+.stats {
+  width: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stats h1 {
+  font-family: 'Odibee Sans', cursive;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin: .5em 0 .2em 0;
+}
+
+.stats h3 {
+  font-size: 1rem;
+}
+
+.stat {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
+  gap: .5em;
+  width: 100%;
+  margin-bottom: 1.1em;
+}
+
+.stat span {
+  font-size: 1rem;
+
+}
+
+.stats button {
+  color: whitesmoke;
+  border: none;
+  background-color: blue;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  align-self: flex-start;
+  padding: .5em;
+  border-radius: 10px;
+  box-shadow: -5px 5px 0px 0px rgba(0,0,0,0.57);
+}
+.stats button:hover {
+  transform: translate(-5px, 5px);
+  box-shadow:none;
+  margin-left: 1em;
+}
+
+.stat img {
+  width: 2.5em;
+  user-select: none;
+}
+
+.nostatbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.type {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3em;
+  /* background-color: #fff; */
+}
+
+.typechild {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items:center;
+  gap: .3em;
+  padding: .2em;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.753);
+}
+
+.typechild p {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.typechild img {
+  width: 1.8em;
+  user-select: none;
+}
