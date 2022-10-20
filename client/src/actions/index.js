@@ -10,10 +10,11 @@ export const ORDER_BY_STRENGTH = 'ORDER_BY_STRENGTH';
 export const SEND_ONE_POKEMON = 'SEND_ONE_POKEMON';
 export const ADD_POKEMON = 'ADD_POKEMON';
 export const RESET = 'RESET';
+const URL = 'https://proyecto-individual-production.up.railway.app/'
 
 
 export const getTypes = () => dispatch => {
-    return fetch('http://localhost:3001/types')
+    return fetch(`${URL}`)
             .then(r => r.json())
             .then(d => dispatch({
                 type: GET_TYPES,
@@ -23,7 +24,7 @@ export const getTypes = () => dispatch => {
 };
 
 export const getPokemons = () => dispatch => {
-    return fetch('http://localhost:3001/pokemons')
+    return fetch(`${URL}/pokemons`)
             .then(r => r.json())
             .then(d => dispatch({
                 type: GET_POKEMONS,
@@ -41,7 +42,7 @@ export const sendOnePokemon = (pokemon) => dispatch => {
         },
         body: JSON.stringify(pokemon)
     }
-    fetch('http://localhost:3001/pokemons', config)
+    fetch(`${URL}/pokemons`, config)
         .then(r => r.json())
         .then(d => dispatch({
             type: SEND_ONE_POKEMON,
@@ -51,7 +52,7 @@ export const sendOnePokemon = (pokemon) => dispatch => {
 };
 
 export const getOnePokemon = (name) => dispatch => {
-    return fetch(`http://localhost:3001/pokemons?name=${name}`)
+    return fetch(`${URL}/pokemons?name=${name}`)
             .then(r => r.json())
             .then(d => dispatch ({
                 type: GET_ONE_POKEMON,
@@ -61,7 +62,7 @@ export const getOnePokemon = (name) => dispatch => {
 };
 
 export const getPokemonDetail = (id) => dispatch => {
-    return fetch(`http://localhost:3001/pokemons/${id}`)
+    return fetch(`${URL}/pokemons/${id}`)
             .then(r => r.json())
             .then(d => dispatch ({
                 type: GET_POKEMON_DETAIL,
