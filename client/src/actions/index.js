@@ -10,7 +10,7 @@ export const ORDER_BY_STRENGTH = 'ORDER_BY_STRENGTH';
 export const SEND_ONE_POKEMON = 'SEND_ONE_POKEMON';
 export const ADD_POKEMON = 'ADD_POKEMON';
 export const RESET = 'RESET';
-const URL = 'https://proyecto-individual-production.up.railway.app/'
+const URL = 'https://proyecto-individual-production.up.railway.app'
 
 
 export const getTypes = () => dispatch => {
