@@ -13,12 +13,12 @@ export default function CreatePokemon(props) {
     const [error, setError] = useState('');
     const [input, setInput] = useState({
         name: '',
-        hp: '',
-        attack: '',
-        defense: '',
-        speed: '',
-        height: '',
-        weight: '',
+        hp: 0,
+        attack: 0,
+        defense: 0,
+        speed: 0,
+        height: 0,
+        weight: 0,
         img: require(`./../../Images/CreatePokemon/${img}.png`).default,  //agregar azar de imagenes
         types: [],
     });
@@ -32,17 +32,16 @@ export default function CreatePokemon(props) {
         (input.speed > 0 && input.speed <= 200) &&
         (input.height > 0 && input.height <= 200) &&
         (input.weight > 0 && input.weight <= 10000) &&
-        (input.types.length > 0) && (/^[a-zA-Zñ\s]{1,20}$/.test(input.name))
+        (input.types.length > 0) && (/^[a-zA-ZñÑ\s]{1,20}$/.test(input.name))
         ? false : true
 
-    
+
 
     const handleOnChange = (e) => {
-        if(e.target.name === 'name') {
-            if(!(input.name.length > 0 && input.name.length <= 20)) {
-                setError('El nombre debe tener una longitud mínima de 20 caracteres.')
-            } 
-            if (!e.target.value.length) {
+        if (e.target.name === 'name') {
+            if (input.name.length >= 20) {
+                setError('El nombre debe tener una longitud máxima de 20 caracteres.')
+            } else {
                 setError('')
             }
         }
@@ -79,7 +78,7 @@ export default function CreatePokemon(props) {
         e.preventDefault();
         dispatch(sendOnePokemon({
             id: idx,
-            name: input.name.toLowerCase(),
+            name: input.name,
             ...input,
         }))
         let add = {
@@ -102,12 +101,12 @@ export default function CreatePokemon(props) {
         // window.location.reload()
         setInput({
             name: '',
-            hp: '',
-            attack: '',
-            defense: '',
-            speed: '',
-            height: '',
-            weight: '',
+            hp: 0,
+            attack: 0,
+            defense: 0,
+            speed: 0,
+            height: 0,
+            weight: 0,
             img: require(`./../../Images/CreatePokemon/${img}.png`).default,  //agregar azar de imagenes
             types: [],
         })
@@ -118,6 +117,7 @@ export default function CreatePokemon(props) {
     useEffect(() => {
         return () => dispatch(clear())
     }, [dispatch]);
+    console.log(input.name.length)
     return (
         <React.Fragment>
             <Nav />
@@ -125,69 +125,120 @@ export default function CreatePokemon(props) {
                 <h1 className={s.title}>Crea tu propio Pokemon</h1>
                 <form onSubmit={onSubmit} id='myForm' className={s.form}>
                     <div className={s.formContainerLeft} >
-                        <label className={s.labelLeft}>Nombre:
-                            <input
-                                value={input.name}
-                                type="text"
-                                name='name'
-                                onChange={handleOnChange}
-                                className={s.inputtext}
-                            /></label>
-                            <span>{error? error : null}</span>
+                        <label className={s.labelLeft}>
+                            <div className={s.labelLeftDiv}>
+                                <span>Nombre:</span>
+                                <img
+                                    src={require(`./../../Images/CreatePokemon/name.png`).default}
+                                    alt={`icon name`}
+                                    className={s.iconimg}
+                                />
+                                <input
+                                    value={input.name.toLowerCase()}
+                                    type="text"
+                                    name='name'
+                                    onChange={handleOnChange}
+                                    className={s.inputtext}
+                                />
+                            </div>
+                            <span className={s.error}>{error ? error : null}</span>
+                        </label>
 
-                        <label className={s.labelLeft}>Salud:
+                        <label className={s.labelLeft}>{`Salud: ${input.hp}`}
+                            <img
+                                src={require(`./../../Images/CreatePokemon/hp.png`).default}
+                                alt={`icon hp`}
+                                className={s.iconimgrange}
+                            />
                             <input
                                 value={input.hp}
-                                type="number"
+                                type="range"
+                                min='0'
+                                max='200'
                                 name='hp'
                                 onChange={handleOnChange}
-                                className={s.inputnumber1}
+                                className={s.inputrange}
 
                             /></label>
 
-                        <label className={s.labelLeft}>Ataque:
+                        <label className={s.labelLeft}>{`Ataque: ${input.attack}`}
+                            <img
+                                src={require(`./../../Images/CreatePokemon/attack.png`).default}
+                                alt={`icon hp`}
+                                className={s.iconimgrange}
+                            />
                             <input
                                 value={input.attack}
-                                type="number"
+                                type="range"
+                                min='0'
+                                max='200'
                                 name='attack'
                                 onChange={handleOnChange}
-                                className={s.inputnumber2}
+                                className={s.inputrange}
                             /></label>
 
-                        <label className={s.labelLeft}>Defensa:
+                        <label className={s.labelLeft}>{`Defensa: ${input.defense}`}
+                            <img
+                                src={require(`./../../Images/CreatePokemon/defense.png`).default}
+                                alt={`icon hp`}
+                                className={s.iconimgrange}
+                            />
                             <input
                                 value={input.defense}
-                                type="number"
+                                type="range"
+                                min='0'
+                                max='200'
                                 name='defense'
                                 onChange={handleOnChange}
-                                className={s.inputnumber3}
+                                className={s.inputrange}
                             /></label>
 
-                        <label className={s.labelLeft}>Velocidad:
+                        <label className={s.labelLeft}>{`Velocidad: ${input.speed}`}
+                            <img
+                                src={require(`./../../Images/CreatePokemon/speed.png`).default}
+                                alt={`icon hp`}
+                                className={s.iconimgrange}
+                            />
                             <input
                                 value={input.speed}
-                                type="number"
+                                type="range"
+                                min='0'
+                                max='200'
                                 name='speed'
                                 onChange={handleOnChange}
-                                className={s.inputnumber4}
+                                className={s.inputrange}
                             /></label>
 
-                        <label className={s.labelLeft}>Tamaño:
+                        <label className={s.labelLeft}>{`Tamaño: ${input.height} cm.`}
+                            <img
+                                src={require(`./../../Images/CreatePokemon/height.png`).default}
+                                alt={`icon hp`}
+                                className={s.iconimgrange}
+                            />
                             <input
                                 value={input.height}
-                                type="number"
+                                type="range"
+                                min='0'
+                                max='200'
                                 name='height'
                                 onChange={handleOnChange}
-                                className={s.inputnumber5}
+                                className={s.inputrange}
                             /></label>
 
-                        <label className={s.labelLeft}>Peso:
+                        <label className={s.labelLeft}>{`Peso: ${input.weight} kg.`}
+                            <img
+                                src={require(`./../../Images/CreatePokemon/weight.png`).default}
+                                alt={`icon hp`}
+                                className={s.iconimgrange}
+                            />
                             <input
                                 value={input.weight}
-                                type="number"
+                                type="range"
+                                min='0'
+                                max='1000'
                                 name='weight'
                                 onChange={handleOnChange}
-                                className={s.inputnumber6}
+                                className={s.inputrange}
                             /></label>
 
                     </div>
@@ -210,8 +261,8 @@ export default function CreatePokemon(props) {
                             <img src={require(`./../../Images/CreatePokemon/${img}.png`).default} alt='Img selected' className={s.imgselected} />
                         </div>
                         <div className={s.checkbox}>
-                            <label>Types: </label>
-                            <label>{'(seleccionar 1 o 2 tipos como máximo)'}</label>
+                            <label className={s.labelfirst}>Tipos: </label>
+                            <label className={s.labelsecond}>{'(seleccionar 1 o 2 tipos como máximo)'}</label>
                             {!types ? <Spinner /> : types.map(el => {
                                 let nameSplit = el.name.split('')
                                 let first = nameSplit.shift().toUpperCase();
@@ -231,7 +282,7 @@ export default function CreatePokemon(props) {
                                 )
                             })}
                         </div>
-                        <span>
+                        <span className={s.message}>
                             {Object.entries(responseDB).length === 0 ?
                                 ''
                                 :
@@ -240,7 +291,7 @@ export default function CreatePokemon(props) {
                         </span>
                         <input
                             type="submit"
-                            value="Crear"
+                            value="Crear Pokemon"
                             className={s.inputsubmit}
                             disabled={validate}
                             style={validate ? { cursor: 'not-allowed', backgroundColor: '#acadad' } : { cursor: 'pointer' }}

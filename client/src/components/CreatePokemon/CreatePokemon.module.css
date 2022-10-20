@@ -40,122 +40,56 @@
     font-size: 1rem;
 }
 
-.formContainerLeft input {
-    margin-left: 1em;
-    cursor: text;
-}
-
 .labelLeft {
     color: #ffffff;
     padding: .5em;
-    width: 80%;
+    width: 85%;
     background: #2d3436;
     border-radius: 0.5em;
+    text-align: center;
 }
 
-.inputtext  {
+.inputtext {
     font-family: 'Montserrat', sans-serif;
     outline: none;
-    width: calc(100% - 90px);
+    width: calc(100% - 120px);
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
     background-color: white;
-    background-image: url('../../Images/CreatePokemon/name.png') !important;
-    background-size: 12px;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 6px 25px 6px 50px
+    padding: .5em .6em;
 }
 
-.inputnumber1 {
-    font-family: 'Montserrat', sans-serif;
-    width: calc(100% - 67px);
-    outline: none;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('../../Images/CreatePokemon/hp.png') !important;
-    background-size: 12px;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 6px 25px 6px 50px
+.labelLeft:first-child{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content:space-between;
 }
 
-.inputnumber2 {
-    font-family: 'Montserrat', sans-serif;
-    width: calc(100% - 80px);
-    outline: none;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('../../Images/CreatePokemon/attack.png') !important;
-    background-size: 12px;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 6px 25px 6px 50px
+.labelLeftDiv {
+    width: 100%;;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content:space-between;
 }
 
-.inputnumber3 {
-    font-family: 'Montserrat', sans-serif;
-    width: calc(100% - 87px);
-    outline: none;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('../../Images/CreatePokemon/defense.png') !important;
-    background-size: 12px;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 6px 25px 6px 50px
+.error {
+    padding-top: .4em;
+    font-size: 1rem;
+    color: #f17878;
 }
 
-.inputnumber4 {
-    font-family: 'Montserrat', sans-serif;
-    width: calc(100% - 100px);
-    outline: none;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('../../Images/CreatePokemon/speed.png') !important;
-    background-size: 12px;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 6px 25px 6px 50px
+.iconimg {
+    width: 2em;
+    filter: drop-shadow(0 0 .2em rgb(255, 255, 255));
+    user-select: none;
 }
 
-.inputnumber5 {
-    font-family: 'Montserrat', sans-serif;
-    width: calc(100% - 90px);
-    outline: none;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('../../Images/CreatePokemon/height.png') !important;
-    background-size: 12px;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 6px 25px 6px 50px
-}
-
-.inputnumber6 {
-    font-family: 'Montserrat', sans-serif;
-    width: calc(100% - 62px);
-    outline: none;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('../../Images/CreatePokemon/weight.png') !important;
-    background-size: 12px;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 6px 25px 6px 50px
+.iconimgrange {
+    width: 1.4em;
+    user-select: none;
 }
 
 .wrapimg {
@@ -174,6 +108,7 @@
 .imgselected {
     width: 170px;
     height: 150px;
+    user-select: none;
 }
 
 .inputimg {
@@ -181,7 +116,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    
+
 }
 
 .inputrange {
@@ -314,19 +249,19 @@
     border-radius: 0.5em;
 }
 
-.checkbox label:first-child {
+.labelfirst {
     color: #ffffff;
     width: 100%;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
-.checkbox label:nth-child(2) {
-    color: #788285;
+.labelsecond {
+    color: #e4e4e4;
     width: 100%;
     text-align: center;
-    font-size: .6rem;
-    letter-spacing: .3em;
+    font-size: .8rem;
+    letter-spacing: .2em;
 }
 
 
@@ -361,7 +296,7 @@
     background: linear-gradient(#2d3436, #2d3436) padding-box, linear-gradient(#fdcb6e, #ffeaa7) border-box;
 }
 
-.formContainerRigth span {
+.message {
     font-size: 1.5rem;
     padding: .8em 0;
     color: rgb(245, 45, 45);
