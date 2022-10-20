@@ -7,7 +7,7 @@ const routes = require('./routes/index.js');
 require('./db/db.js');
 
 const server = express();
-const URL = 'https://proyecto-individual-production.up.railway.app'
+const URL = 'https://proyectpokemonbarv-r3i03g9kv-barv11.vercel.app/'
 
 server.name = 'API';
 
