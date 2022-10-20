@@ -14,7 +14,7 @@ const URL = 'https://proyecto-individual-production.up.railway.app'
 
 
 export const getTypes = () => dispatch => {
-    return fetch(`${URL}`)
+    return fetch(`${URL}/types`)
             .then(r => r.json())
             .then(d => dispatch({
                 type: GET_TYPES,
