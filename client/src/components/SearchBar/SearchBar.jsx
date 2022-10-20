@@ -15,7 +15,7 @@ export default function SearchBar(props) {
 
 
     const handleOnChange = (e) => {
-        setInput(e.target.value)
+        setInput(e.target.value.toLowerCase())
         setLoading(true)
         dispatch(clear())
     };
