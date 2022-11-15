@@ -80,7 +80,7 @@ router.post('/', async (req, res) => {
 
             const newPokemon = await Pokemon.create({ id, name, img, hp, defense, speed, height, weight, attack });
             await newPokemon.addTypes(types);
-            res.send({ description: 'Pokemon creado con éxito.' });
+            res.send({ description: 'Pokemon ha sido creado con éxito.' });
         }
     } catch (err) {
         res.status(404).send({
